@@ -1,0 +1,28 @@
+server:
+  port: 8088
+kcb-ussd-service:
+  initator-username: kcbsaf
+  initator-password: ussdpuish123
+  commandid: mycompanyID
+  caller-username: masoko
+  caller-password: masoko123
+  result-url: http://192.77.48.40:8080/result_service_listner
+  transaction-mode: 2
+  transaction-type: Confirm
+spring:
+  application:
+    name: kcb-ussd-push
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: root1234
+  jpa:
+    hibernate:
+      ddl-auto: 'create-drop'
+    show-sql: true
+    properties:
+      hibernate: dialect:org.hibernate.dialect.PostgreSQLDialkect
+      format-sql: true
+
+
+

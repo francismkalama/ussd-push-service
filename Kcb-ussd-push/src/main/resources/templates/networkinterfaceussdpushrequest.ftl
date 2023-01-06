@@ -1,0 +1,44 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tns="tns:ns">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<tns:NetworkInitiatedUSSDPushRequestMsg>
+			<tns:RequestHeader>
+				<tns:TimeStamp>${timestamp}</tns:TimeStamp>
+				<tns:CommandID>${mycompanyid}</tns:CommandID>
+				<tns:RequestID>${requestid}</tns:RequestID>
+				<tns:CallerIdentity>
+					<tns:UserName>${calleridentity_username}</tns:UserName>
+					<tns:Password>${calleridentity_password}</tns:Password>
+					<tns:RemoteAddress>${remoteaddress}</tns:RemoteAddress>
+				</tns:CallerIdentity>
+			</tns:RequestHeader>
+			<tns:NetworkInitiatedUSSDPushRequest>
+				<tns:InitiatorParty>
+					<tns:InitiatorPartyType>2</tns:InitiatorPartyType>
+					<tns:InitiatorPartyDesc>Application</tns:InitiatorPartyDesc>
+					<tns:InitiatorIdentity>
+						<tns:UserName>${initiatorusername}</tns:UserName>
+						<tns:Password>${initiatorpassword}</</tns:Password>
+						<tns:RemoteAddress>${remoteaddress}</tns:RemoteAddress>
+						<tns:ResultURL>${resultURL}</tns:ResultURL>
+					</tns:InitiatorIdentity>
+				</tns:InitiatorParty>
+				<tns:ReceiverParty>
+					<tns:ReceiverPartyType>1</tns:ReceiverPartyType>
+					<tns:ReceiverPartyDesc>MSISDN</tns:ReceiverPartyDesc>
+					<tns:ReceiverPartyIdentifier>${msisdn}</tns:ReceiverPartyIdentifier>
+				</tns:ReceiverParty>
+				<tns:Transaction>
+					<tns:TransactionType>${transactiontype}</tns:TransactionType>
+					<tns:TransactionMode>${transactionmode}</tns:TransactionMode>
+					<tns:TransactionParameters>
+						<tns:Param>
+							<tns:Key>Prompt</tns:Key>
+							<tns:Value>Please confirm send KSH 2,000 to xxxxx, phone number079861234462\n\n1. Yes\n2. No</tns:Value>
+						</tns:Param>
+					</tns:TransactionParameters>
+				</tns:Transaction>
+			</tns:NetworkInitiatedUSSDPushRequest>
+		</tns:NetworkInitiatedUSSDPushRequestMsg>
+	</soapenv:Body>
+</soapenv:Envelope>
